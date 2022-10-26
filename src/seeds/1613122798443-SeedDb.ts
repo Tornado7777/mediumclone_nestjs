@@ -26,6 +26,10 @@ export class SeedDb1613122798443 implements MigrationInterface {
       `INSERT INTO articles (slug, title, description, body, "tagList", "authorId") VALUES ('3-article', '3 article', '3 article description', '3 article body', 'coffee,dragons', 2), ('second2-article', 'Second2 article', 'Second2 article description', 'Second2 article body', 'coffee,dragons', 2)`,
     );
 
+    await queryRunner.query(
+      `INSERT INTO follows ("followerId", "followingId") VALUES (1, 2)`,
+    );
+
   }
 
   public async down(): Promise<void> { }
